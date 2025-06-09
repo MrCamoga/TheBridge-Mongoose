@@ -47,7 +47,7 @@ module.exports = {
 		});
 	},
 	delete(req,res,next) {
-		Product.fildByIdAndDelete(req.params.id).then(product => {
+		Product.findByIdAndDelete(req.params.id).then(product => {
 			res.status(200).send({message:'Product deleted', product});
 		}).catch(error => {
 			console.error(error);
