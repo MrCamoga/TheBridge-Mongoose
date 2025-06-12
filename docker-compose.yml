@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  api:
+    container_name: api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/root/src
+      - /root/src/node_modules
+    healthcheck:
+      disable: true
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    tty: true
